@@ -1,5 +1,6 @@
 let el = document.createElement('a')
 el.href="https://angulare.app/?utm_source=cws&utm_campaign=race"
+el.target="_blank"
 el.classList.add('marquee');
 
 let el1 = document.createElement('span');
