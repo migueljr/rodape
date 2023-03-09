@@ -1,0 +1,124 @@
+.pr5-service-section {
+    padding: 100px 0;
+    position: relative; 
+    z-index: 1;
+    &::before {
+        content: ''; 
+        width: 100%; 
+        height: 540px; 
+        background-color: $secondary-color; 
+        position: absolute; 
+        top: 0; 
+        left: 0;
+        z-index: -1; 
+    }
+    .pr5-title-area {
+        span {
+            background-color: #587d7f;
+        }
+        .pr5-headline {
+            h3 {
+                color: $white-color;
+            }
+        }
+        .pr5-pera-txt {
+            p {
+                color: $white-color;
+            }
+        }
+    }
+}
+
+.pr5-service-content {
+    margin-top: 60px;
+    .pr5-service-column {
+        position: relative;
+        margin-bottom: 30px;
+        &::after {
+            content: ''; 
+            width: 100%; 
+            height: 80%; 
+            position: absolute; 
+            bottom: 0px; 
+            left: 0;
+            z-index: -1;
+            box-shadow: 0px 20px 60px 0px rgba(16, 69, 72, 0.08);
+        }
+        .pr5-sr-cl {
+            background-color: $white-color;
+            padding: 60px 20px 20px 20px;
+            clip-path: polygon(0 0, 100% 13%, 100% 100%, 0% 100%);
+            border-radius: 6px;
+            .pr5-icon-wrapper {
+                position: relative; 
+                display: inline-block;
+                margin-bottom: 30px;
+                &::after {
+                    content: ''; 
+                    position: absolute; 
+                    bottom: 0; 
+                    left: 0; 
+                    width: 100%; 
+                    height: 80%; 
+                    box-shadow: 0px 20px 30px 0px rgba(249, 77, 28, 0.3);
+                    opacity: 0;
+                }
+                i {
+                    width: 70px; 
+                    height: 70px;
+                    background-color: #ffe5dd;
+                    display: inline-flex; 
+                    align-items: center; 
+                    justify-content: center;
+                    font-size: 30px; 
+                    color: $primary-color;
+                    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
+                    border-radius: 4px;
+                    transition: $transition;
+                }
+            }
+            .pr5-headline {
+                margin-bottom: 20px;
+            }
+            .pr5-pera-txt {
+                margin-bottom: 20px;
+            }
+        }
+        .pr5-primary-btn {
+            position: absolute;
+            width: 100%;
+            left: 0; 
+            bottom: -15px;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: $transition;
+            a {
+                width: 148px;
+                height: 45px;
+                i {
+                    margin-left: 10px;
+                }
+            }
+        }
+        &:hover {
+            .pr5-sr-cl {
+                .pr5-icon-wrapper {
+                    i {
+                        background-color: $primary-color;
+                        color: $white-color;
+                    }
+                }
+            }
+            .pr5-primary-btn {
+                opacity: 1; 
+                visibility: visible;
+                bottom: -30px;
+            }
+        }
+    }
+    .pr5-secondary-btn {
+        margin-top: 30px; 
+        text-align: center;
+    }
+}

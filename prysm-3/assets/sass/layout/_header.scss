@@ -1,0 +1,295 @@
+.pr5-header-section {
+    background-color: transparent;
+    position: relative; 
+    z-index: 100;
+    @include medium-screen {
+        background-color: #FFF8F5;
+    }
+    .pr5-main-header {
+        background-color: $secondary-color; 
+        padding: 10px 0; 
+        border-radius: 3px;
+        .pr5-header-info-bar {
+            padding-bottom: 10px;
+        }
+        .pr5-info-left {
+            color: $white-color;
+            padding-left: 10px;
+            span {
+                font-weight: 600;
+                i {
+                    margin-right: 6px;
+                }
+                + span {
+                    margin-left: 20px;
+                }
+            }
+        }
+        .pr5-info-right {
+            text-align: right; 
+            padding-right: 10px;
+            @include portrait-phone {
+                text-align: left;
+                padding-left: 10px;
+                margin-top: 10px;
+            }
+            a {
+                color: $white-color;
+                font-weight: 600;
+                transition: $transition; 
+                &:hover {
+                    color: $primary-color;
+                }
+                + a {
+                    margin-left: 18px;
+                    position: relative; 
+                    &::before {
+                        content: ''; 
+                        width: 2px; 
+                        height: 15px;
+                        background-color: #eff3fc;
+                        position: absolute; 
+                        top: 3px; 
+                        left: -9px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pr5-header-sticky {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    animation: 1s slideInDown;
+    z-index: 150;
+    .pr5-header-info-bar {
+        display: none;
+    }
+}
+
+.pr5-header-navigation {
+    background-color: $white-color;
+    border-radius: 3px;
+    padding: 10px 10px;
+    .pr5-logo-wrapper {
+        a {
+            width: 150px;
+            display: inline-block;
+        }
+    }
+    .pr5-desktop-menu {
+        @include medium-screen {
+            display: none;
+        }
+        .pr5-main-navigation {
+            @include ipadpro {
+                display: none;
+            }
+        }
+    }
+    .pr5-main-navigation {
+        ul {
+            li {
+                display: inline-block;
+                position: relative;
+                a {
+                    display: block; 
+                    padding: 18px 18px;
+                    font-weight: 600;
+                    color: $heading-color;
+                    
+                }
+                ul {
+                    position: absolute;
+                    top: calc(100% + 10px); 
+                    left: 0; 
+                    width: 220px; 
+                    background-color: $secondary-color; 
+                    z-index: 10;
+                    opacity: 0; 
+                    visibility: hidden;
+                    transition: $transition;
+                    li {
+                        display: block;
+                        a {
+                            padding: 12px;
+                            color: $white-color;
+                            &:hover {
+                                padding-left: 16px;
+                            }
+                        }
+                        + li {
+                            border-top: 1px solid #eff3fc;
+                        }
+                        ul {
+                            top: 0; 
+                            left: 90%;
+                        }
+                        &:hover {
+                            & > a {
+                                color: $white-color;
+                            }
+                            & > ul {
+                                top: 0;
+                                left: 100%;
+                            }
+                        }
+                    }
+                    li.has-submenu {
+                        &::after {
+                            color: $white-color;
+                        }
+                        &:hover {
+                            &::after {
+                                color: $white-color !important;
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    & > a {
+                        color: $primary-color;
+                    }
+                    &::after {
+                        transform: rotate(45deg);
+                        color: $primary-color !important;
+                    }
+                    & > ul {
+                        opacity: 1; 
+                        visibility: visible; 
+                        top: 100%;
+                    }
+                }
+            }
+            li.has-submenu {
+                &::after {
+                    content: '\f067'; 
+                    font-family: 'Font Awesome 5 Free'; 
+                    font-weight: 900;
+                    position: absolute; 
+                    top: 19px; 
+                    font-size: 14px; 
+                    right: 4px;
+                    color: $heading-color;
+                    transition: $transition;
+                }
+            }
+        }
+    }
+    .pr5-header-right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .pr5-primary-btn {
+            display: inline-block;
+            a {
+                width: auto;
+                padding-right: 10px;
+                i {
+                    margin-left: 10px;
+                }
+            }
+            @include portrait-phone {
+                display: none;
+            }
+        }
+        .pr5-mobile-menu-open {
+            display: none; 
+            text-align: right;
+            padding-right: 3px;
+            font-size: 30px;
+            margin-left: 15px;
+            @include ipadpro {
+                display: inline-block;
+            }
+            
+        }
+    }
+}
+
+
+
+//Moible Menu 
+.pr5-mobile-navigation {
+    position: fixed; 
+    right: -320px; 
+    top: 0; 
+    width: 300px;
+    height: 100vh;
+    overflow: scroll; 
+    background-color: $secondary-color;
+    padding-top: 20px;
+    z-index: 300;
+    display: none;
+    transition: $transition;
+    @include ipadpro {
+        display: block;
+    }
+    .pr5-mobile-menu-close {
+        margin-left: 20px;
+        margin-bottom: 20px;
+        display: inline-block;
+        color: $white-color;
+    }
+    ul {
+        li {
+            position: relative;
+            a {
+                padding: 12px 18px;
+                display: block;
+                color: $white-color;
+                font-weight: 600;
+                text-transform: capitalize;
+            }
+            + li {
+                a {
+                    border-top: 1px solid #eff3fc;
+                }
+            }
+            ul {
+                display: none;
+                li {
+                    a {
+                        padding-left: 25px;
+                    }
+                    ul {
+                        li {
+                            a {
+                                padding-left: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        li.has-submenu {
+            &::after {
+                content: '\f067'; 
+                font-family: 'Font Awesome 5 Free'; 
+                font-weight: 900; 
+                font-size: 14px;
+                position: absolute; 
+                right: 10px;
+                top: 10px; 
+                color: $white-color;
+            }
+        }
+    }
+}
+.pr5-mobile-menu-on {
+    right: 0; 
+}
+
+
+
+
+//Hero Slider 
+.pr5-hero-slider {
+    margin-top: -150px;
+    @include medium-screen {
+        margin-top: 0;
+    }
+}

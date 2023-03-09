@@ -1,0 +1,41 @@
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 4px 2px;
+    width: 100%;
+    color:black;
+  }
+  .marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 10s linear infinite;
+  }
+  @keyframes marquee {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-100%, 0);
+    }
+  }
+
+
+  .image-flip{
+    animation:flip 1s infinite;
+  }
+
+
+  @keyframes flip {
+    0% {
+      -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
+      transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+    }
+    100% {
+      -webkit-transform: perspective(400px);
+      transform: perspective(400px);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+  } 

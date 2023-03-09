@@ -1,0 +1,197 @@
+.pr5-footer-section {
+    padding: 160px 0 0 0; 
+    background-color: $secondary-color;
+    position: relative; 
+    @include screen-460 {
+        padding-top: 180px;
+    }
+    .pr5-footer-top {
+        position: absolute;
+        width: 100%; 
+        top: -100px;
+        @include screen-460 {
+            top: -140px;
+        }
+    }
+}
+
+.pr5-ft-content {
+    background-color: $primary-color; 
+    padding: 60px 30px;
+    position: relative;
+    border-radius: 6px;
+    .pr5-ft-left {
+        .pr5-headline {
+            h3 {
+                color: $white-color; 
+            }
+        }
+        .pr5-ft-form {
+            margin-top: 10px;
+            form {
+                position: relative; 
+                input[type="email"] {
+                    width: 100%; 
+                    padding: 16px;
+                    padding-right: 180px;
+                    border: 0;
+                    font-family: $heading-font;
+                    font-weight: 600;
+                    font-size: 15px; 
+                    color: #adadad;
+                    border-radius: 3px;
+                    &::placeholder {
+                        color: #adadad;
+                    }
+                }
+                .pr5-secondary-btn {
+                    width: 190px; 
+                    height: 55px;
+                    background-color: $secondary-color;
+                    display: inline-flex;
+                    align-items: center;
+                    color: $white-color;
+                    font-family: $heading-font; 
+                    font-weight: 600;
+                    border-radius: 3px;
+                    font-size: 15px;
+                    padding-left: 15px;
+                    transition: $transition;
+                    border: 0;
+                    position: absolute; 
+                    top: 0; 
+                    right: 0;
+                    overflow: hidden;
+                    @include screen-460 {
+                        position: initial;
+                        margin-top: 10px;
+                    }
+                    i {
+                        width: 35px; 
+                        height: 35px; 
+                        background-color: #587a7b;
+                        display: inline-flex;
+                        text-align: center; 
+                        line-height: 0;
+                        justify-content: center; 
+                        align-items: center;
+                        border-radius: 3px;
+                        margin-left: 18px;
+                        transition: $transition;
+                    }
+                    &:hover {
+                        i {
+                            background-color: #fb7f5c;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .pr5-ft-right {
+        position: relative;
+        height: 100%;
+        img {
+            width: initial;
+            position: absolute; 
+            bottom: -60px; 
+            right: 0;
+            @include small-screen {
+                display: none;
+            }
+        }
+    }
+}
+
+.pr5-footer-bottom {
+    margin-top: 60px;
+    .pr5-footer-widget {
+        margin-bottom: 60px;
+        .pr5-footer-logo {
+            width: 130px;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+        .pr5-pera-txt {
+            p {
+                color: $white-color;
+            }
+        }
+        .pr5-primary-btn {
+            margin-top: 30px;
+            a {
+                border: 1px solid transparent;
+                &:hover {
+                    border: 1px solid $primary-color;
+                }
+            }
+        }
+        .pr5-headline {
+            margin-bottom: 30px; 
+            h4 {
+                color: $white-color;
+            }
+        }
+        .pr5-footer-links {
+            ul {
+                li {
+                    a {
+                        color: $white-color;
+                        &:hover {
+                            color: $primary-color;
+                        }
+                    }
+                    + li {
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+        .pr5-footer-contact {
+            ul {
+                li {
+                    color: $white-color;
+                    i {
+                        margin-right: 6px;
+                    }
+                    + li {
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+        .pr5-footer-news {
+            ul {
+                li {
+                    display: flex;
+                    + li {
+                        margin-top: 20px;
+                    }
+                    .pr5-fn-thumb {
+                        margin-right: 10px;
+                        img {
+                            border-radius: 6px;
+                            width: 80px;
+                        }
+                    }
+                    .pr5-headline {
+                        margin-bottom: 10px;
+                        h6 {
+                            font-size: 16px;
+                            color: $white-color;
+                            font-weight: 600;
+                        }
+                    }
+                    .pr5-fn-meta {
+                        span {
+                            color: $white-color;
+                            i {
+                                margin-right: 6px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
